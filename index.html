@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="renderer" content="webkit">
+		<title>个人中心</title>
+		<link href="__PUBLIC__/Css/bootstrap.css" rel="stylesheet">
+		<link href="__PUBLIC__/Css/user.css" rel="stylesheet">
+		<script src="__PUBLIC__/Js/jquery.1.6.2.min.js" type="text/javascript"></script>
+		<!--[if lt IE 9]>
+			<script src='/js/html5shiv.js'>
+			</script>
+			<script src='/js/respond.min.js'>
+			</script>
+		<![endif]-->
+		<!--[if lt IE 7]>
+			<script src='/Scripts/json2.js'>
+			</script>
+		<![endif]-->
+		<style type="text/css">
+			#footer { line-height: 46px; color: #8a8a8a; border-top: 1px solid #dadada;
+			text-align:left; } #footer a { color: #8a8a8a; margin: 0px 5px; outline:
+			none; text-decoration: none; } .lh20 { line-height: 20px; text-align: center;
+			} img { border: 0; } .tonglan { width: 960px; height: 145px; margin: 10px
+			0px 10px 10px; } body { background-color: #FBFBFF; font-size:12px; } .user-class
+			{ padding-left: 0px; }
+.but{border:none;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;color:#FFF;cursor:pointer;}	
+.button-pink{background:url(../Images/glass-light.png) 0 50% repeat-x #EA4C89;}
+.button-pink:hover{background-color:#df3e7b;}
+.button-pink:active{background-color:#c22b65;}
+.button-blue{background:url(../Images/glass-light.png) 0 50% repeat-x #1d88b4;}
+.button-blue:hover{background-color:#15739a;}
+.button-blue:active{background-color:#135F80;}
+.btn-small{padding:8px 20px;}
+.btndisable{background:#999;}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="masthead" style="margin-top:30px">
+					<p class="text-warning">
+						激活码在线：{$info.code}　到期时间：{$info.date}
+					</p>
+					<div class="row">
+						<div class="masthead" style="margin-top:0px">
+							<p class="text-warning">
+							</p>
+							<ul class="nav nav-justified">
+								<li>
+									<a href="__APP__?m=Home&a=index">
+										获取验证码
+									</a>
+								</li>
+								<li>
+									<a href="__APP__?m=Home&a=recharge">
+										激活码加时
+									</a>
+								</li>
+								<li>
+									<a href="__APP__?m=Login&a=logout">
+										注销激活码
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<br>
+					<div style="width:100%">
+						<div class="row">
+							<div style="margin-top:10px;width:100%">
+								<div class="row">
+									<div class="row col-md-offset-2 col-sm-8">
+										<div class="alert alert-info">
+											<p id="show_info" style="color:#F00; padding:10px 0px 10px 0px;">
+												请点击UU加速器获取验证码。
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<form class="form-horizontal" role="form">
+										<div class="form-group">
+											<label class="col-sm-2 control-label">
+												手机号码：
+											</label>
+											<div class="col-sm-4">
+												<input id="txtPhone" type="text" value="{$info.phone}" class="form-control"	disabled>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-2 control-label">
+												短信内容：
+											</label>
+											<div class="col-xs-4">
+												<textarea id="Code" class="form-control" rows="6" style="font-size:8px;"></textarea>
+											</div>
+											<div class="col-xs-1">
+												
+												<input type="button" value="获取验证码" class="but button-blue btn-small" id="getcode" name="getcode" style="margin-left:-10px">
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="container" style="margin-left:auto;color:#333333;font-family:&#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif;font-size:14px;">
+								<div class="row-fluid">
+									<div class="panel panel-danger" style="border:1px solid #EBCCD1;background-color:#FFFFFF;">
+										<div class="panel-heading" style="padding:10px 15px;color:#A94442;background-color:#F2DEDE;">
+											<span class="alert-danger">
+												注意事项：
+											</span>
+										</div>
+										<div class="panel-body" style="padding:15px;">
+											<p class="text-muted" style="color:#999999;">
+												1.页面打开后，请主动去uu发送验证码
+											</p>
+											<p class="text-muted" style="color:#999999;">
+												2.验证码收取期间请勿关闭页面
+											</p>
+											<p class="text-muted" style="color:#999999;">
+												3.如果剩余时间不足且不想更换手机号，请到期前购买新的解锁码充值。
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+<script type="text/javascript">
+    var disable_getcode_timer;
+    var waitforgetcode=true;
+    var get_count = 0;
+	window.onload = function() {
+    $("#getcode").trigger("click");
+   }
+    $("#getcode").click(function(){
+		waitforgetcode = true;
+	    $('#getcode').val('获取验证码');
+        $("#getcode").die().live("click",function () { getCode(); });
+	    $("#Code").val("获取验证码中...");
+     });
+	 
+    function disable_getcode(time)
+    {
+        var old_value = $('#getcode').val().match(/^[^\(]+/)[0];
+    	if(time>0)
+    	{
+    	    $('#getcode').val(old_value+'('+time+')');
+    		time--;
+    		disable_getcode_timer=setTimeout("disable_getcode("+time+")",1000);
+    	}
+    	else
+    	{
+    	    $('#getcode').val(old_value);
+    		$('#getcode').removeAttr("disabled");  
+    		$('#getcode').removeClass("btndisable");
+    		if (waitforgetcode) {
+    		    $("#getcode").click();
+    		}
+    	}
+    }
+    function getCode()
+    {
+    	$('#getcode').attr("disabled", true);
+    	$('#getcode').addClass("btndisable");
+        disable_getcode(5);
+    	$.ajax({
+                type: "GET",
+                url: "__APP__?m=Home&a=getsms",
+                success: function (msg) {
+                    get_count++;
+    				if(msg.indexOf('not_receive')!=-1)
+    				{
+            			$("#Code").val("第"+get_count+"次获取暂未收到验证码...");
+    					return false;
+    				}
+    				else if(msg=="syserr")
+    				{
+    					clearTimeout(disable_getcode_timer);
+    				    waitforgetcode = false;
+    				    alert('您已下线，请重试！');
+    				    window.location.replace("__APP__?m=Login&a=index");
+    					return false;
+    				}else if(msg.indexOf('html')!=-1)
+    				{
+            			$("#Code").val("第"+get_count+"次获取未收到验证码...");
+    					return false;
+    				}
+                    else if(msg!='')
+    				{
+                    	get_count = 0;
+    					$("#Code").val(msg);
+    					clearTimeout(disable_getcode_timer);
+    					waitforgetcode = false;
+    					$('#getcode').val('获取验证码');
+    					$('#getcode').removeAttr("disabled");   
+    					$('#getcode').removeClass("btndisable");
+    				}
+    				else
+                    {
+                        clearTimeout(disable_getcode_timer);
+    					alert('发生错误,请重试');
+    				}
+                }
+    	});
+    }
+</script>
+	</body>
+</html>
