@@ -23263,7 +23263,10 @@
                 }],
                 staticClass: "lr-content-empty"
             }, [e._v("数据加载中…")])], 2)]), e._v(" "), n("div", {
-               
+                staticClass: "lr-group appear-more-videos",
+                attrs: {
+                    id: "",
+                }
             }, [e._m(0), e._v(" "), n("div", {
                 staticClass: "more-live-list"
             }, [e._l(e.moreVideos, function(e) {
