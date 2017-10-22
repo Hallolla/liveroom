@@ -4637,7 +4637,10 @@
     (e.exports = n(11)()).push([e.id, '#J_header-bar[data-v-375b32d0]{height:60px;background:#ff2851}#J_header-bar[data-v-375b32d0]:after{content:"";display:inline-block;*display:inline;*zoom:1;vertical-align:middle;height:100%}.logo-wrapper[data-v-375b32d0]{width:1190px;line-height:60px;margin:auto}#J_header-bar .header-icon[data-v-375b32d0]{margin-left:28px;height:27px;width:130px}', ""])
 }
 , function(e, t) {
-    e.exports = {}
+    e.exports = {
+        
+
+    }
 }
 , function(e, t, n) {
     n(28);
@@ -4703,6 +4706,8 @@
             return n("div", {
                 staticClass: "lr-group appear-replay-videos",
                 attrs: {
+                    id: "J_replay-showcase",
+                    "data-spm": "2278280"
                 }
             }, [n("h3", {
                 staticClass: "live-title"
@@ -23260,11 +23265,6 @@
                     expression: "(!replayVideosLoaded)"
                 }],
                 staticClass: "lr-content-empty"
-            }, [e._v("数据加载中…")])], 2)]), e._v(" "), n("div", {
-                staticClass: "lr-group appear-more-videos",
-                attrs: {
-                    id: "",
-                }
             }, [e._m(0), e._v(" "), n("div", {
                 staticClass: "more-live-list"
             }, [e._l(e.moreVideos, function(e) {
