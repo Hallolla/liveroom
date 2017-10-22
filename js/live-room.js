@@ -22825,7 +22825,7 @@
             }, [e._v("没有最热推荐")])]), e._v(" "), n("div", {
                 staticClass: "lr-all-item",
                 attrs: {
-                    
+                    id: "J_item_wrapper"
                 }
             }, [n("div", {
                 directives: [{
@@ -23069,7 +23069,7 @@
             }, [e._v("没有最热推荐")])]), e._v(" "), n("div", {
                 staticClass: "lr-all-item",
                 attrs: {
-                    
+                    id: "J_item_wrapper"
                 }
             }, [n("div", {
                 directives: [{
