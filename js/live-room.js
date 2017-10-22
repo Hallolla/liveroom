@@ -4637,10 +4637,7 @@
     (e.exports = n(11)()).push([e.id, '#J_header-bar[data-v-375b32d0]{height:60px;background:#ff2851}#J_header-bar[data-v-375b32d0]:after{content:"";display:inline-block;*display:inline;*zoom:1;vertical-align:middle;height:100%}.logo-wrapper[data-v-375b32d0]{width:1190px;line-height:60px;margin:auto}#J_header-bar .header-icon[data-v-375b32d0]{margin-left:28px;height:27px;width:130px}', ""])
 }
 , function(e, t) {
-    e.exports = {
-        
-		
-    }
+    e.exports = {}
 }
 , function(e, t, n) {
     n(28);
@@ -23209,110 +23206,6 @@
     }
 }
 , function(e, t) {
-    e.exports = {
-        render: function() {
-            var e = this
-              , t = e.$createElement
-              , n = e._self._c || t;
-            return n("div", {
-                attrs: {
-                    id: "J_room-container"
-                }
-            }, [n("header-bar"), e._v(" "), n("div", {
-                attrs: {
-                    id: "J_live-main"
-                }
-            }, [e.showHorizontal ? n("horizontal-panel", {
-                attrs: {
-                    "is-replay": e.isReplay
-                }
-            }) : e._e(), e._v(" "), e.showVertical ? n("vertical-panel", {
-                attrs: {
-                    "is-replay": e.isReplay
-                }
-            }) : e._e(), e._v(" "), e.hasVideo ? e._e() : n("div", {
-                staticClass: "lr-status-desc-wrapper"
-            }, [n("p", {
-                staticClass: "lr-status-desc"
-            }, [e._v(e._s(e.errMsg))])]), e._v(" "), n("showcase-list", {
-                attrs: {
-                    "data-spm": "2278280",
-                    page: Math.ceil(e.replayVideos.length / 4)
-                }
-            }, [n("div", {
-                staticClass: "lr-showcase-body",
-                slot: "showcase-list-body"
-            }, [e._l(e.replayVideos, function(e, t) {
-                return n("lr-replay-item", {
-                    attrs: {
-                        "replay-item": e,
-                        "track-by": "index"
-                    }
-                })
-            }), e._v(" "), n("div", {
-                directives: [{
-                    name: "show",
-                    rawName: "v-show",
-                    value: 0 === e.replayVideos.length && e.replayVideosLoaded,
-                    expression: "(replayVideos.length === 0 && replayVideosLoaded)"
-                }],
-                staticClass: "lr-content-empty"
-            }, [e._v("主播还没有回放内容")]), e._v(" "), n("div", {
-                directives: [{
-                    name: "show",
-                    rawName: "v-show",
-                    value: !e.replayVideosLoaded,
-                    expression: "(!replayVideosLoaded)"
-                }],
-                staticClass: "lr-content-empty"
-            }, [e._v("数据加载中…")])], 2)]), e._v(" "), n("div", {
-                staticClass: "lr-group appear-more-videos",
-                attrs: {
-                    id: "J_more-live",
-                    "data-spm": "2278281"
-                }
-            }, [e._m(0), e._v(" "), n("div", {
-                staticClass: "more-live-list"
-            }, [e._l(e.moreVideos, function(e) {
-                return n("lr-morelive-item", {
-                    attrs: {
-                        "more-item": e
-                    }
-                })
-            }), e._v(" "), n("div", {
-                directives: [{
-                    name: "show",
-                    rawName: "v-show",
-                    value: 0 === e.moreVideos.length && e.moreVideosLoaded,
-                    expression: "(moreVideos.length === 0 && moreVideosLoaded)"
-                }],
-                staticClass: "lr-content-empty"
-            }, [e._v("没有更多直播")]), e._v(" "), n("div", {
-                directives: [{
-                    name: "show",
-                    rawName: "v-show",
-                    value: !e.moreVideosLoaded,
-                    expression: "(!moreVideosLoaded)"
-                }],
-                staticClass: "lr-content-empty"
-            }, [e._v("数据加载中…")])], 2)])], 1), e._v(" "), n("toast", {
-                ref: "toast",
-                attrs: {
-                    txt: e.toastMsg
-                }
-            })], 1)
-        },
-        staticRenderFns: [function() {
-            var e = this
-              , t = e.$createElement
-              , n = e._self._c || t;
-            return n("h3", {
-                staticClass: "live-title"
-            }, [n("span", {
-                staticClass: "live-title-txt live-title-txt-big"
-            }, [e._v("更多直播")])])
-        }
-        ]
-    }
+    e.exports = {  }
 }
 ]);
