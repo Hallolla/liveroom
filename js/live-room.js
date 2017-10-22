@@ -23263,13 +23263,10 @@
                     expression: "(!replayVideosLoaded)"
                 }],
                 staticClass: "lr-content-empty"
-            }, [e._v("数据加载中…")])], 2)]), e._v(" "), n("div", {
-                staticClass: "lr-group appear-more-videos",
-                attrs: {
-                    id: "J_more-live",
-                    "data-spm": "2278281"
-                }
-            }, [e._m(0), e._v(" "), n("div", {
+            }, 
+			[e._v("数据加载中…")])], 2)]), 
+			e._v(" "), 
+			 [e._m(0), e._v(" "), n("div", {
                 staticClass: "more-live-list"
             }, [e._l(e.moreVideos, function(e) {
                 return n("lr-morelive-item", {
