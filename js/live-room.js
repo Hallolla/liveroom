@@ -23265,15 +23265,7 @@
                     expression: "(!replayVideosLoaded)"
                 }],
                 staticClass: "lr-content-empty"
-            }, [e._m(0), e._v(" "), n("div", {
-                staticClass: "more-live-list"
-            }, [e._l(e.moreVideos, function(e) {
-                return n("lr-morelive-item", {
-                    attrs: {
-                        "more-item": e
-                    }
-                })
-            }), e._v(" "), n("div", {
+            }, e._v(" "), n("div", {
                 directives: [{
                     name: "show",
                     rawName: "v-show",
