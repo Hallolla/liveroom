@@ -4703,8 +4703,6 @@
             return n("div", {
                 staticClass: "lr-group appear-replay-videos",
                 attrs: {
-                    id: "J_replay-showcase",
-                    "data-spm": "2278280"
                 }
             }, [n("h3", {
                 staticClass: "live-title"
@@ -22827,7 +22825,7 @@
             }, [e._v("没有最热推荐")])]), e._v(" "), n("div", {
                 staticClass: "lr-all-item",
                 attrs: {
-                    id: "J_item_wrapper"
+                    
                 }
             }, [n("div", {
                 directives: [{
@@ -23071,7 +23069,7 @@
             }, [e._v("没有最热推荐")])]), e._v(" "), n("div", {
                 staticClass: "lr-all-item",
                 attrs: {
-                    id: "J_item_wrapper"
+                    
                 }
             }, [n("div", {
                 directives: [{
