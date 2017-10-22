@@ -1,4 +1,5 @@
 !function(e) {
+	document.querySelector("#J_SiteNav").innerHTML ='';
     function t(r) {
         if (n[r])
             return n[r].exports;
