@@ -23206,6 +23206,21 @@
     }
 }
 , function(e, t) {
-    e.exports = {  }
+    e.exports = {
+        render: function() {
+            
+        },
+        staticRenderFns: [function() {
+            var e = this
+              , t = e.$createElement
+              , n = e._self._c || t;
+            return n("h3", {
+                staticClass: "live-title"
+            }, [n("span", {
+                staticClass: "live-title-txt live-title-txt-big"
+            }, [e._v("更多直播")])])
+        }
+        ]
+    }
 }
 ]);
